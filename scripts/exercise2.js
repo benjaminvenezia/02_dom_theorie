@@ -1,3 +1,5 @@
+import PersonCard from './personCard.js'
+
 (function exercise2() {
   /**
    * Le code ci-dessous est une ébauche avec des défauts et des améliorations possibles.
@@ -5,6 +7,7 @@
    * 1. créer une classe Person avec les propriétés name, age et job
    *  a. classe
    *  b. attribuer une valeur par défaut à job
+   *  c. exporter la classe dans le fichier person.js et l'importer dans le fichier d'exercice
    * 
    * 2. remplacer les occurences person1, person2 et person3 par des instances de Person
    * 
@@ -44,33 +47,5 @@
     .appendChild(card1)
     .appendChild(card2)
     .appendChild(card3)
-
-  class PersonCard extends HTMLElement {
-    constructor(name, age, job) {
-      super()
-      this.setAttribute('class', 'card')
-
-      const cardContent = document.createElement('div')
-      cardContent.className = 'card-content'
-      this.appendChild(cardContent)
-
-      const media = document.createElement('div')
-      media.className = 'media'
-      cardContent.appendChild(media)
-      const mediaContent = document.createElement('div')
-      mediaContent.className = 'media-content'
-      media.appendChild(mediaContent)
-
-      this.nameCt = document.createElement('p')
-      this.nameCt.className = 'title is-4'
-      this.nameCt.textContent = name
-      this.jobCt = document.createElement('p')
-      this.jobCt.className = 'subtitle is-6'
-      this.jobCt.textContent = job
-      mediaContent.appendChild(this.nameCt)
-      mediaContent.appendChild(this.jobCt)
-    }
-  }
-  customElements.define('person-card', PersonCard)
 
 })()
