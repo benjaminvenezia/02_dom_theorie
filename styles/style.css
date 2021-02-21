@@ -1,0 +1,8 @@
+#ex2-people {
+    display: flex;
+    justify-content: space-between;
+}
+
+#ex2-people .card {
+    min-width: 250px;
+}
