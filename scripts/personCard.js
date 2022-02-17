@@ -21,8 +21,15 @@ export default class PersonCard extends HTMLElement {
     this.jobCt = document.createElement('p')
     this.jobCt.className = 'subtitle is-6'
     this.jobCt.textContent = job
+
+    this.ageCt = document.createElement('p')
+    this.ageCt.className = 'subtitle is-6'
+    this.ageCt.textContent = age + ' Years old'
+
     mediaContent.appendChild(this.nameCt)
     mediaContent.appendChild(this.jobCt)
+    mediaContent.appendChild(this.ageCt)
+
   }
 }
 customElements.define('person-card', PersonCard)

@@ -1,4 +1,5 @@
 import PersonCard from './personCard.js'
+import Person from './person.js'
 
 (function exercise2() {
   /**
@@ -26,26 +27,21 @@ import PersonCard from './personCard.js'
    * 2. modifier le constructeur de PersonCard pour prendre une instance de Person en paramètre
    */
 
-  var person1 = { name: 'Bob', age: 32, job: 'doctor' }
-  var person2 = { name: 'Jon', age: 18, job: 'delivery boy' }
-  var person3 = { name: 'Ted', age: 53, job: 'engineer' }
+  const person1 = Person.create('Bob', 32, 'Doctor')
+  const person2 = Person.create('Jon', 18, 'delivery boy')
+  const person3 = Person.create('Ted', 53, 'engineer')
 
-  var card1 = document.createElement('div')
-  var card2 = document.createElement('div')
-  var card3 = document.createElement('div')
+  
+    const list = document.getElementById('ex2-people')
+    const persons = [person1, person2, person3]
 
-  card1.textContent = person1.name
-  card2.textContent = person2.name
-  card3.textContent = person3.name
-
-  card1.className =
-    card2.className =
-    card3.className = 'card'
-
-  document
-    .getElementById('ex2-people')
-    .appendChild(card1)
-    .appendChild(card2)
-    .appendChild(card3)
+    persons.forEach((p) => {
+      // const card = document.createElement('div')
+      // card.textContent = p.name
+      // card.className = 'card'
+      // list.appendChild(card)
+      const card = new PersonCard(p.name, p.age, p.job)
+      list.appendChild(card)
+    });
 
 })()
